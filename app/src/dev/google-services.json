@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "project id",
+    "project_id": "1234",
+    "storage_bucket": "1234"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:971547668:android:6fassda4b8aae9d3c3e236512121",
+        "android_client_info": {
+          "package_name": "com.abdulkarim.playground"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AzaSyjpy26dUiUVg2NbDUUwrYi-zvfK2hKUkkH"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

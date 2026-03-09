@@ -23,6 +23,7 @@ dependencies {
     compileOnly(libs.android.gradlePlugin)
     compileOnly(libs.kotlin.gradlePlugin)
     compileOnly(libs.ksp.gradlePlugin)
+    compileOnly(libs.firebase.crashlytics.gradlePlugin)
 }
 
 gradlePlugin {
@@ -46,31 +47,31 @@ gradlePlugin {
             id = libs.plugins.iamkarim.android.hilt.get().pluginId
             implementationClass = "AndroidHiltConventionPlugin"
         }
-//
-//        register("androidRetrofitConvention") {
-//            id = "iamkarim.android.retrofit"
-//            implementationClass = "AndroidRetrofitConventionPlugin"
-//        }
-//
+
+        register("androidRetrofitConvention") {
+            id = libs.plugins.iamkarim.android.retrofit.get().pluginId
+            implementationClass = "AndroidRetrofitConventionPlugin"
+        }
+
         register("androidFeatureConvention") {
             id = libs.plugins.iamkarim.android.feature.get().pluginId
             implementationClass = "AndroidFeatureConventionPlugin"
         }
-//
-//        register("androidNavigationComponentConvention") {
-//            id = "iamkarim.android.navigation"
-//            implementationClass = "AndroidNavigationComponentConventionPlugin"
-//        }
-//
-//        register("androidApplicationFirebaseConvention") {
-//            id = "iamkarim.android.firebase"
-//            implementationClass = "AndroidApplicationFirebaseConventionPlugin"
-//        }
-//
-//        register("androidRoomConvention") {
-//            id = "iamkarim.android.room"
-//            implementationClass = "AndroidRoomConventionPlugin"
-//        }
+
+        register("androidNavigationComponentConvention") {
+            id = libs.plugins.iamkarim.android.navigation.get().pluginId
+            implementationClass = "AndroidNavigationComponentConventionPlugin"
+        }
+
+        register("androidApplicationFirebaseConvention") {
+            id = libs.plugins.iamkarim.android.firebase.get().pluginId
+            implementationClass = "AndroidApplicationFirebaseConventionPlugin"
+        }
+
+        register("androidRoomConvention") {
+            id = libs.plugins.iamkarim.android.room.get().pluginId
+            implementationClass = "AndroidRoomConventionPlugin"
+        }
     }
 }
 
