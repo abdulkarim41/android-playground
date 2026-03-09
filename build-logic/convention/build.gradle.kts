@@ -25,3 +25,52 @@ dependencies {
     compileOnly(libs.ksp.gradlePlugin)
 }
 
+gradlePlugin {
+    plugins {
+        register("androidApplicationConvention") {
+            id = libs.plugins.iamkarim.android.application.get().pluginId
+            implementationClass = "AndroidApplicationConventionPlugin"
+        }
+
+//        register("androidLibraryConvention") {
+//            id = "iamkarim.android.library"
+//            implementationClass = "AndroidLibraryConventionPlugin"
+//        }
+//
+//        register("jvmLibraryConvention") {
+//            id = "iamkarim.jvm.library"
+//            implementationClass = "JvmLibraryConventionPlugin"
+//        }
+//
+//        register("androidHiltConvention") {
+//            id = "iamkarim.android.hilt"
+//            implementationClass = "AndroidHiltConventionPlugin"
+//        }
+//
+//        register("androidRetrofitConvention") {
+//            id = "iamkarim.android.retrofit"
+//            implementationClass = "AndroidRetrofitConventionPlugin"
+//        }
+//
+//        register("androidFeatureConvention") {
+//            id = "iamkarim.android.feature"
+//            implementationClass = "AndroidFeatureConventionPlugin"
+//        }
+//
+//        register("androidNavigationComponentConvention") {
+//            id = "iamkarim.android.navigation"
+//            implementationClass = "AndroidNavigationComponentConventionPlugin"
+//        }
+//
+//        register("androidApplicationFirebaseConvention") {
+//            id = "iamkarim.android.firebase"
+//            implementationClass = "AndroidApplicationFirebaseConventionPlugin"
+//        }
+//
+//        register("androidRoomConvention") {
+//            id = "iamkarim.android.room"
+//            implementationClass = "AndroidRoomConventionPlugin"
+//        }
+    }
+}
+

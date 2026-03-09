@@ -11,10 +11,17 @@ material = "1.13.0"
 activity = "1.12.4"
 constraintlayout = "2.2.1"
 
+compile-sdk = "36"
+min-sdk = "26"
+
 # Firebase
 firebase-bom = "34.9.0"
 firebase-crashlytics-plugin = "3.0.6"
 google-services = "4.4.4"
+
+timber = "5.0.1"
+desugar = "2.1.5"
+kotlinxCoroutines = "1.10.2"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -26,6 +33,11 @@ material = { group = "com.google.android.material", name = "material", version.r
 androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
 androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
 
+log-timber = {group = "com.jakewharton.timber", name = "timber", version.ref="timber"}
+desugar = { group = "com.android.tools", name = "desugar_jdk_libs", version.ref = "desugar" }
+kotlinx-coroutines-android = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "kotlinxCoroutines" }
+
+# build logic plugin
 android-gradlePlugin = { group = "com.android.tools.build", name = "gradle", version.ref = "agp" }
 kotlin-gradlePlugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
 ksp-gradlePlugin = { group = "com.google.devtools.ksp", name = "com.google.devtools.ksp.gradle.plugin", version.ref = "ksp" }
@@ -33,4 +45,14 @@ ksp-gradlePlugin = { group = "com.google.devtools.ksp", name = "com.google.devto
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
+
+iamkarim-android-application = { id = "iamkarim.android.application", version = "unspecified" }
+#iamkarim-android-library = { id = "iamkarim.android.library", version = "unspecified" }
+#iamkarim-jvm-library = { id = "iamkarim.jvm.library", version = "unspecified" }
+#iamkarim-android-hilt = { id = "iamkarim.android.hilt", version = "unspecified" }
+#iamkarim-android-retrofit = { id = "iamkarim.android.retrofit", version = "unspecified" }
+#iamkarim-android-feature = { id = "iamkarim.android.feature", version = "unspecified" }
+#iamkarim-android-navigation = { id = "iamkarim.android.navigation", version = "unspecified" }
+#iamkarim-android-firebase = { id = "iamkarim.android.firebase", version = "unspecified" }
+#iamkarim-android-room = { id = "iamkarim.android.room", version = "unspecified" }
 

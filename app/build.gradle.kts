@@ -1,17 +1,12 @@
 plugins {
-    alias(libs.plugins.android.application)
+    alias(libs.plugins.iamkarim.android.application)
 }
 
 android {
     namespace = "com.abdulkarim.androidplayground"
-    compileSdk {
-        version = release(36)
-    }
 
     defaultConfig {
         applicationId = "com.abdulkarim.androidplayground"
-        minSdk = 27
-        targetSdk = 36
         versionCode = 1
         versionName = "1.0"
 
@@ -27,9 +22,10 @@ android {
             )
         }
     }
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+
+    buildFeatures {
+        viewBinding = true
+        buildConfig = true
     }
 }
 
