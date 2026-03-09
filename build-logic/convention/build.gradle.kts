@@ -42,10 +42,10 @@ gradlePlugin {
 //            implementationClass = "JvmLibraryConventionPlugin"
 //        }
 //
-//        register("androidHiltConvention") {
-//            id = "iamkarim.android.hilt"
-//            implementationClass = "AndroidHiltConventionPlugin"
-//        }
+        register("androidHiltConvention") {
+            id = libs.plugins.iamkarim.android.hilt.get().pluginId
+            implementationClass = "AndroidHiltConventionPlugin"
+        }
 //
 //        register("androidRetrofitConvention") {
 //            id = "iamkarim.android.retrofit"
