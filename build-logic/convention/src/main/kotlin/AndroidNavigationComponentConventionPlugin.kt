@@ -12,15 +12,7 @@ class AndroidNavigationComponentConventionPlugin : Plugin<Project> {
             dependencies {
                 add(
                     configurationName = "implementation",
-                    dependencyNotation = libs.findLibrary("androidx.navigation.ktx").get()
-                )
-                add(
-                    configurationName = "implementation",
-                    dependencyNotation = libs.findLibrary("androidx.navigation.ui").get()
-                )
-                add(
-                    configurationName = "implementation",
-                    dependencyNotation = libs.findLibrary("androidx.navigation.hilt").get()
+                    dependencyNotation = libs.findBundle("navigation").get()
                 )
             }
         }

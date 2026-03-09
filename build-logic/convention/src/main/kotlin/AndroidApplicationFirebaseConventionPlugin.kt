@@ -12,21 +12,15 @@ class AndroidApplicationFirebaseConventionPlugin : Plugin<Project> {
             }
 
             dependencies {
+
                 add(
-                    configurationName= "implementation",
-                    dependencyNotation = platform(libs.findLibrary("firebase-bom").get())
+                    "implementation",
+                    platform(libs.findLibrary("firebase-bom").get())
                 )
+
                 add(
-                    configurationName = "implementation",
-                    dependencyNotation = libs.findLibrary("firebase.messaging").get()
-                )
-                add(
-                    configurationName = "implementation",
-                    dependencyNotation = libs.findLibrary("firebase.analytics").get()
-                )
-                add(
-                    configurationName = "implementation",
-                    dependencyNotation = libs.findLibrary("firebase.crashlytics").get()
+                    "implementation",
+                    libs.findBundle("firebase").get()
                 )
             }
         }
