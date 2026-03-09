@@ -1,5 +1,7 @@
 [versions]
-agp = "9.0.1"
+agp = "9.1.0"
+kotlin = "2.3.10"
+ksp = "2.3.4"
 coreKtx = "1.17.0"
 junit = "4.13.2"
 junitVersion = "1.3.0"
@@ -8,6 +10,11 @@ appcompat = "1.7.1"
 material = "1.13.0"
 activity = "1.12.4"
 constraintlayout = "2.2.1"
+
+# Firebase
+firebase-bom = "34.9.0"
+firebase-crashlytics-plugin = "3.0.6"
+google-services = "4.4.4"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -18,6 +25,11 @@ androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
 androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
+
+android-gradlePlugin = { group = "com.android.tools.build", name = "gradle", version.ref = "agp" }
+kotlin-gradlePlugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
+ksp-gradlePlugin = { group = "com.google.devtools.ksp", name = "com.google.devtools.ksp.gradle.plugin", version.ref = "ksp" }
+#com-google-firebase-crashlytics = { id = "com.google.firebase.crashlytics", version.ref = "firebase-crashlytics-plugin" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
