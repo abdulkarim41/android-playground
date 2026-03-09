@@ -3,14 +3,10 @@ agp = "9.1.0"
 kotlin = "2.3.10"
 ksp = "2.3.4"
 hilt = "2.59.2"
-coreKtx = "1.17.0"
 junit = "4.13.2"
 junitVersion = "1.3.0"
 espressoCore = "3.7.0"
-appcompat = "1.7.1"
 material = "1.13.0"
-activity = "1.12.4"
-constraintlayout = "2.2.1"
 
 compile-sdk = "36"
 min-sdk = "26"
@@ -20,23 +16,61 @@ firebase-bom = "34.9.0"
 firebase-crashlytics-plugin = "3.0.6"
 google-services = "4.4.4"
 
+# AndroidX
+androidx-core = "1.17.0"
+androidx-appcompat = "1.7.1"
+androidx-activity = "1.12.4"
+androidx-fragment = "1.8.9"
+androidx-lifecycle = "2.10.0"
+androidx-navigation = "2.9.7"
+androidx-navigation-hilt = "1.3.0"
+androidx-recyclerview = "1.4.0"
+androidx-cardview = "1.0.0"
+androidx-constraintlayout = "2.2.1"
+
+# Network
+retrofit = "3.0.0"
+okhttp = "5.3.2"
+gson = "2.13.2"
+
 timber = "5.0.1"
 desugar = "2.1.5"
 kotlinxCoroutines = "1.10.2"
 
 [libraries]
-androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
-androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
-androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
-androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
+
+# ---------- AndroidX Core ----------
+androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "androidx-core" }
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "androidx-appcompat" }
+androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "androidx-activity" }
+androidx-fragment = {group = "androidx.fragment", name = "fragment-ktx", version.ref="androidx-fragment"}
+androidx-recyclerview = {group = "androidx.recyclerview", name = "recyclerview", version.ref="androidx-recyclerview"}
+androidx-cardview = {group = "androidx.cardview", name = "cardview", version.ref="androidx-cardview"}
+androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "androidx-constraintlayout" }
 
 # ---------- DI ----------
 hilt-android = {group = "com.google.dagger", name = "hilt-android", version.ref="hilt"}
 hilt-compiler = {group = "com.google.dagger", name = "hilt-android-compiler", version.ref="hilt"}
+
+# ---------- Network ----------
+retrofit-core = {group = "com.squareup.retrofit2", name = "retrofit", version.ref="retrofit"}
+retrofit-adapter-rx3 = {group = "com.squareup.retrofit2", name = "adapter-rxjava3", version.ref="retrofit"}
+retrofit-converter-gson = {group = "com.squareup.retrofit2", name = "converter-gson", version.ref="retrofit"}
+okhHttp-core = {group = "com.squareup.okhttp3", name = "okhttp", version.ref="okhttp"}
+okhHttp-logging-interceptor = {group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref="okhttp"}
+gson = {group = "com.google.code.gson", name = "gson", version.ref="gson"}
+
+
+# ---------- Lifecycle ----------
+androidx-lifecycle-viewmodel-ktx = {group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref="androidx-lifecycle"}
+androidx-lifecycle-viewmodel-savedstate = {group = "androidx.lifecycle", name = "lifecycle-viewmodel-savedstate", version.ref="androidx-lifecycle"}
+androidx-lifecycle-livedata = {group = "androidx.lifecycle", name = "lifecycle-livedata-ktx", version.ref="androidx-lifecycle"}
+androidx-lifecycle-runtime = {group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref="androidx-lifecycle"}
+androidx-lifecycle-service = {group = "androidx.lifecycle", name = "lifecycle-service", version.ref="androidx-lifecycle"}
 
 log-timber = {group = "com.jakewharton.timber", name = "timber", version.ref="timber"}
 desugar = { group = "com.android.tools", name = "desugar_jdk_libs", version.ref = "desugar" }
@@ -52,7 +86,7 @@ ksp-gradlePlugin = { group = "com.google.devtools.ksp", name = "com.google.devto
 android-application = { id = "com.android.application", version.ref = "agp" }
 
 #android-library = { id = "com.android.library", version.ref = "agp" }
-#org-jetbrains-kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+org-jetbrains-kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 com-google-dagger-hilt-android = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 com-google-devtools-ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 #androidx-navigation-safeargs = { id = "androidx.navigation.safeargs", version.ref = "androidx-navigation" }
@@ -60,11 +94,12 @@ com-google-devtools-ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" 
 #com-google-firebase-crashlytics = { id = "com.google.firebase.crashlytics", version.ref = "firebase-crashlytics-plugin"}
 
 iamkarim-android-application = { id = "iamkarim.android.application", version = "unspecified" }
-#iamkarim-android-library = { id = "iamkarim.android.library", version = "unspecified" }
-#iamkarim-jvm-library = { id = "iamkarim.jvm.library", version = "unspecified" }
+iamkarim-android-library = { id = "iamkarim.android.library", version = "unspecified" }
+iamkarim-jvm-library = { id = "iamkarim.jvm.library", version = "unspecified" }
 iamkarim-android-hilt = { id = "iamkarim.android.hilt", version = "unspecified" }
+android-library = { id = "com.android.library", version.ref = "agp" }
 #iamkarim-android-retrofit = { id = "iamkarim.android.retrofit", version = "unspecified" }
-#iamkarim-android-feature = { id = "iamkarim.android.feature", version = "unspecified" }
+iamkarim-android-feature = { id = "iamkarim.android.feature", version = "unspecified" }
 #iamkarim-android-navigation = { id = "iamkarim.android.navigation", version = "unspecified" }
 #iamkarim-android-firebase = { id = "iamkarim.android.firebase", version = "unspecified" }
 #iamkarim-android-room = { id = "iamkarim.android.room", version = "unspecified" }

@@ -1,17 +1,18 @@
 plugins {
-    alias(libs.plugins.iamkarim.android.application)
-    alias(libs.plugins.iamkarim.android.hilt)
+    alias(libs.plugins.android.library)
 }
 
 android {
-    namespace = "com.abdulkarim.androidplayground"
+    namespace = "com.abdulkarim.ui"
+    compileSdk {
+        version = release(36)
+    }
 
     defaultConfig {
-        applicationId = "com.abdulkarim.androidplayground"
-        versionCode = 1
-        versionName = "1.0"
+        minSdk = 27
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles("consumer-rules.pro")
     }
 
     buildTypes {
@@ -23,22 +24,16 @@ android {
             )
         }
     }
-
-    buildFeatures {
-        viewBinding = true
-        buildConfig = true
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
     }
 }
 
 dependencies {
-
-    implementation(projects.core.common)
-
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
-    implementation(libs.androidx.activity)
-    implementation(libs.androidx.constraintlayout)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

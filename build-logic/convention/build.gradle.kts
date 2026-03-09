@@ -32,16 +32,16 @@ gradlePlugin {
             implementationClass = "AndroidApplicationConventionPlugin"
         }
 
-//        register("androidLibraryConvention") {
-//            id = "iamkarim.android.library"
-//            implementationClass = "AndroidLibraryConventionPlugin"
-//        }
-//
-//        register("jvmLibraryConvention") {
-//            id = "iamkarim.jvm.library"
-//            implementationClass = "JvmLibraryConventionPlugin"
-//        }
-//
+        register("androidLibraryConvention") {
+            id = libs.plugins.iamkarim.android.library.get().pluginId
+            implementationClass = "AndroidLibraryConventionPlugin"
+        }
+
+        register("jvmLibraryConvention") {
+            id = libs.plugins.iamkarim.jvm.library.get().pluginId
+            implementationClass = "JvmLibraryConventionPlugin"
+        }
+
         register("androidHiltConvention") {
             id = libs.plugins.iamkarim.android.hilt.get().pluginId
             implementationClass = "AndroidHiltConventionPlugin"
@@ -52,10 +52,10 @@ gradlePlugin {
 //            implementationClass = "AndroidRetrofitConventionPlugin"
 //        }
 //
-//        register("androidFeatureConvention") {
-//            id = "iamkarim.android.feature"
-//            implementationClass = "AndroidFeatureConventionPlugin"
-//        }
+        register("androidFeatureConvention") {
+            id = libs.plugins.iamkarim.android.feature.get().pluginId
+            implementationClass = "AndroidFeatureConventionPlugin"
+        }
 //
 //        register("androidNavigationComponentConvention") {
 //            id = "iamkarim.android.navigation"

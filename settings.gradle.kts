@@ -21,4 +21,14 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "android-playground"
+enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
+
 include(":app")
+include(":core:common")
+include(":core:data")
+include(":core:domain")
+include(":core:design-system")
+include(":core:ui")
+include(":core:di")
+include(":core:model:apiresponse")
+include(":core:model:entity")
