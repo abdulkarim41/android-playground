@@ -7,5 +7,7 @@ android {
 }
 
 dependencies {
-
+    implementation(libs.material)
+    implementation(libs.dimension.sdp)
+    implementation(libs.dimension.ssp)
 }

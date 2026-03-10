@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
-        binding.resultTV.text = "Abdul Karim"
+        binding.resultTV.text = "Hi, Abdul Karim"
 
 
     }
