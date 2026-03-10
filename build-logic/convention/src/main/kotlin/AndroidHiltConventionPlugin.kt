@@ -7,10 +7,9 @@ import org.gradle.kotlin.dsl.dependencies
 class AndroidHiltConventionPlugin : Plugin<Project> {
     override fun apply(target: Project) {
         with(target) {
-            with(pluginManager) {
-                apply("com.google.devtools.ksp")
-                apply("dagger.hilt.android.plugin")
-            }
+
+            pluginManager.apply("com.google.devtools.ksp")
+            pluginManager.apply("dagger.hilt.android.plugin")
 
             dependencies {
                 add(

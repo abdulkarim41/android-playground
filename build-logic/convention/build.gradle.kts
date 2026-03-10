@@ -72,6 +72,11 @@ gradlePlugin {
             id = libs.plugins.iamkarim.android.room.get().pluginId
             implementationClass = "AndroidRoomConventionPlugin"
         }
+
+        register("androidLocalStorageConvention") {
+            id = libs.plugins.iamkarim.android.local.storage.get().pluginId
+            implementationClass = "AndroidLocalStorageConventionPlugin"
+        }
     }
 }
 

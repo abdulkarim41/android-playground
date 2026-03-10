@@ -24,6 +24,10 @@ androidx-recyclerview = "1.4.0"
 androidx-cardview = "1.0.0"
 androidx-constraintlayout = "2.2.1"
 
+# Local Data Storage
+datastorePreferences = "1.2.0"
+securityCrypto = "1.1.0"
+
 # Data & Network
 room = "2.8.4"
 retrofit = "3.0.0"
@@ -55,6 +59,12 @@ androidx-fragment = { group = "androidx.fragment", name = "fragment-ktx", versio
 androidx-recyclerview = { group = "androidx.recyclerview", name = "recyclerview", version.ref = "androidx-recyclerview" }
 androidx-cardview = { group = "androidx.cardview", name = "cardview", version.ref = "androidx-cardview" }
 androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "androidx-constraintlayout" }
+
+# ---------- AndroidX Local Data Storage ----------
+androidx-datastore-preferences = { module = "androidx.datastore:datastore-preferences", version.ref = "datastorePreferences" }
+androidx-security-crypto = { module = "androidx.security:security-crypto", version.ref = "securityCrypto" }
+
+
 
 # ---------- DI ----------
 hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
@@ -166,4 +176,5 @@ iamkarim-android-feature = { id = "iamkarim.android.feature" }
 iamkarim-android-navigation = { id = "iamkarim.android.navigation" }
 iamkarim-android-firebase = { id = "iamkarim.android.firebase" }
 iamkarim-android-room = { id = "iamkarim.android.room" }
+iamkarim-android-local-storage = { id = "iamkarim.android.local.storage" }
 
