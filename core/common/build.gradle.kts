@@ -4,4 +4,10 @@ plugins {
 
 android {
     namespace = "com.abdulkarim.common"
+
+    buildFeatures{
+        viewBinding = true
+    }
 }
+
+

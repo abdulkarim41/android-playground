@@ -1,26 +1,17 @@
 package com.abdulkarim.androidplayground
 
 import android.os.Bundle
-import android.util.Log
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import androidx.lifecycle.lifecycleScope
-import com.abdulkarim.datastore.DatastorePreferences
-import com.abdulkarim.securedatastore.SecureDataStorage
-import com.abdulkarim.sharedpref.SharedPrefHelper
-import com.abdulkarim.sharedpref.SpKey
+import com.abdulkarim.androidplayground.databinding.ActivityMainBinding
+import com.abdulkarim.common.viewBinding
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.launch
-import javax.inject.Inject
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
-
-    @Inject lateinit var pref: SharedPrefHelper
-    @Inject lateinit var secureDataStorage: SecureDataStorage
-    @Inject lateinit var datastorePreferences: DatastorePreferences
+    private val binding: ActivityMainBinding by viewBinding(ActivityMainBinding::inflate)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,27 +23,8 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
+        binding.resultTV.text = "Abdul Karim"
 
-        pref.put(SpKey.name, "Abdul Karim")
-        val name = pref.get(SpKey.name, "")
-        Log.e("KKK","from general sharedpref : $name")
-
-        secureDataStorage.put(SpKey.name,"Abdul Karim")
-        secureDataStorage.put(SpKey.phone,"01877516041")
-        secureDataStorage.put(SpKey.token,"zOk01877516041132132132131321KKTSTED&898941")
-        val secureName = secureDataStorage.get(SpKey.name)
-        val securePhone = secureDataStorage.get(SpKey.phone)
-        val secureToken = secureDataStorage.get(SpKey.token)
-        Log.e("KKK","from secure storage : $secureName")
-        Log.e("KKK","from secure storage : $securePhone")
-        Log.e("KKK","from secure storage : $secureToken")
-
-        lifecycleScope.launch {
-            datastorePreferences.put(SpKey.name,"Abdul Karim")
-            datastorePreferences.get(SpKey.name,"").collect {
-                Log.e("KKK","from data store $it")
-            }
-        }
 
     }
 }
