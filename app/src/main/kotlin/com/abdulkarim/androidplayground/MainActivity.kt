@@ -6,10 +6,13 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.lifecycle.lifecycleScope
+import com.abdulkarim.datastore.DatastorePreferences
 import com.abdulkarim.securedatastore.SecureDataStorage
 import com.abdulkarim.sharedpref.SharedPrefHelper
 import com.abdulkarim.sharedpref.SpKey
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @AndroidEntryPoint
@@ -17,6 +20,7 @@ class MainActivity : AppCompatActivity() {
 
     @Inject lateinit var pref: SharedPrefHelper
     @Inject lateinit var secureDataStorage: SecureDataStorage
+    @Inject lateinit var datastorePreferences: DatastorePreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,6 +46,13 @@ class MainActivity : AppCompatActivity() {
         Log.e("KKK","from secure storage : $secureName")
         Log.e("KKK","from secure storage : $securePhone")
         Log.e("KKK","from secure storage : $secureToken")
+
+        lifecycleScope.launch {
+            datastorePreferences.put(SpKey.name,"Abdul Karim")
+            datastorePreferences.get(SpKey.name,"").collect {
+                Log.e("KKK","from data store $it")
+            }
+        }
 
     }
 }
