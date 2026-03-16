@@ -1,52 +1,54 @@
 package com.abdulkarim.architecturepatterns.mvvm
 
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
 import com.abdulkarim.domain.apiusecase.FetchProductsApiUseCase
 import com.abdulkarim.entity.ProductApiEntity
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
-import kotlinx.coroutines.launch
 import com.abdulkarim.common.Result
+import com.abdulkarim.common.base.BaseViewModel
+import timber.log.Timber
 import javax.inject.Inject
 
 @HiltViewModel
 class ProductViewModel @Inject constructor(
     private val fetchProductsApiUseCase: FetchProductsApiUseCase
-) : ViewModel() {
+) : BaseViewModel() {
 
-    private val _uiState = MutableStateFlow<UiState>(UiState.Loading)
+    private val _uiState = MutableStateFlow<ProductUiState>(ProductUiState.Loading)
     val uiState = _uiState.asStateFlow()
 
 
-    val action: (UiAction) -> Unit = {
+    val action: (ProductUiAction) -> Unit = {
         when(it) {
-            is UiAction.FetchProductsApiAction -> fetchProducts()
+            is ProductUiAction.FetchProductsApiAction -> fetchProducts()
         }
     }
 
     init { fetchProducts() }
 
     fun fetchProducts() {
-        viewModelScope.launch {
+        execute {
             fetchProductsApiUseCase.execute().collect { result ->
                 when(result){
-                    is Result.Loading -> _uiState.value = UiState.Loading
-                    is Result.Success -> _uiState.value = UiState.ApiSuccess(result.data)
-                    is Result.Error -> _uiState.value = UiState.ApiError(result.message)
+                    is Result.Loading -> _uiState.value = ProductUiState.Loading
+                    is Result.Success -> {
+                        _uiState.value = ProductUiState.ApiSuccess(result.data)
+                        Timber.d("KKK ${result.data}")
+                    }
+                    is Result.Error -> _uiState.value = ProductUiState.ApiError(result.message)
                 }
             }
         }
     }
 }
 
-sealed interface UiState {
-    data object Loading : UiState
-    data class ApiSuccess(val data: List<ProductApiEntity>) : UiState
-    data class ApiError(val message: String) : UiState
+sealed interface ProductUiState {
+    data object Loading : ProductUiState
+    data class ApiSuccess(val data: List<ProductApiEntity>) : ProductUiState
+    data class ApiError(val message: String) : ProductUiState
 }
 
-sealed interface UiAction {
-    data object FetchProductsApiAction : UiAction
+sealed interface ProductUiAction {
+    data object FetchProductsApiAction : ProductUiAction
 }

@@ -1,5 +1,6 @@
 package com.abdulkarim.data.repoimpl
 
+import android.util.Log
 import com.abdulkarim.common.Result
 import com.abdulkarim.data.apiservice.ProductApiService
 import com.abdulkarim.data.mapper.ProductApiMapper

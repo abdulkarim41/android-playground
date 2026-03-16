@@ -10,4 +10,12 @@ android {
     }
 }
 
+dependencies {
+    implementation(libs.material)
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
+    implementation(libs.androidx.activity)
+    implementation(libs.androidx.recyclerview)
+    implementation(libs.androidx.fragment)
+}
+
 

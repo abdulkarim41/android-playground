@@ -1,5 +1,6 @@
 package com.abdulkarim.domain.apiusecase
 
+import android.util.Log
 import com.abdulkarim.common.Result
 import com.abdulkarim.domain.repository.ProductRepository
 import com.abdulkarim.domain.usecase.ApiUseCaseNonParams

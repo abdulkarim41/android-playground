@@ -12,7 +12,7 @@ espresso-core = "3.7.0"
 # Core Android & UI
 material = "1.13.0"
 compile-sdk = "36"
-min-sdk = "26"
+min-sdk = "27"
 androidx-core = "1.17.0"
 androidx-appcompat = "1.7.1"
 androidx-activity = "1.12.4"
@@ -141,6 +141,7 @@ room = [
 network = [
     "retrofit-core",
     "retrofit-converter-gson",
+    "retrofit-adapter-rx3",
     "okhttp-core",
     "okhttp-logging-interceptor"
 ]

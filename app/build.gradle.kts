@@ -36,6 +36,8 @@ android {
 
 dependencies {
 
+    implementation(projects.features.architecturePatterns)
+
     implementation(projects.core.common)
     implementation(projects.core.data)
     implementation(projects.core.domain)
@@ -45,6 +47,7 @@ dependencies {
 
     implementation(projects.core.model.apiresponse)
     implementation(projects.core.model.entity)
+    implementation(libs.log.timber)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)

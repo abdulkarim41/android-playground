@@ -1,5 +1,6 @@
 package com.abdulkarim.data.wrapper
 
+import android.util.Log
 import com.google.gson.JsonParser
 import com.abdulkarim.common.Result
 import kotlinx.coroutines.Dispatchers
@@ -16,6 +17,7 @@ import javax.inject.Inject
 class NetworkBoundResource @Inject constructor(){
 
     fun<ResultType> fetchData(api : suspend () -> Response<ResultType>): Flow<Result<ResultType>> {
+
         return flow {
             try {
                 emit(Result.Loading(true))
