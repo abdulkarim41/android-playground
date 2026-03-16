@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph_main"
-    app:startDestination="@id/productMvcFragment">
+    app:startDestination="@id/productMVIFragment">
 
     <fragment
         android:id="@+id/productMVPFragment"
@@ -22,5 +22,11 @@
         android:name="com.abdulkarim.architecturepatterns.mvc.ProductMvcFragment"
         android:label="ProductMvcFragment"
         tools:layout="@layout/fragment_product_mvc"/>
+
+    <fragment
+        android:id="@+id/productMVIFragment"
+        android:name="com.abdulkarim.architecturepatterns.mvi.ProductMVIFragment"
+        android:label="ProductMVIFragment"
+        tools:layout="@layout/fragment_product_mvi"/>
 
 </navigation>
