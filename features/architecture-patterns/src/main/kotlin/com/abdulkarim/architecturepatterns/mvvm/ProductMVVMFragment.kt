@@ -1,17 +1,17 @@
 package com.abdulkarim.architecturepatterns.mvvm
 
 import android.os.Bundle
+import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
-import com.abdulkarim.architecturepatterns.databinding.FragmentProductBinding
+import com.abdulkarim.architecturepatterns.databinding.FragmentProductMvvmBinding
 import com.abdulkarim.common.base.BaseFragment
 import dagger.hilt.android.AndroidEntryPoint
-import timber.log.Timber
 import kotlin.getValue
 
 @AndroidEntryPoint
-class ProductMvvmFragment : BaseFragment<FragmentProductBinding>() {
+class ProductMVVMFragment : BaseFragment<FragmentProductMvvmBinding>() {
 
-    override fun viewBindingLayout() = FragmentProductBinding.inflate(layoutInflater)
+    override fun viewBindingLayout() = FragmentProductMvvmBinding.inflate(layoutInflater)
     private val viewModel by viewModels<ProductViewModel>()
 
     override fun initializeView(savedInstanceState: Bundle?) {
@@ -23,13 +23,14 @@ class ProductMvvmFragment : BaseFragment<FragmentProductBinding>() {
     private fun handleUiState(state: ProductUiState) {
         when (state) {
             is ProductUiState.Loading -> {
-                Timber.d("KKK Loading")
+                binding.loadingPB.isVisible = true
             }
             is ProductUiState.ApiSuccess -> {
-                Timber.d("KKK Success : ${state.data}")
+                binding.loadingPB.isVisible = false
+                binding.resultTV.text = state.data[0].title
             }
             is ProductUiState.ApiError -> {
-                Timber.d("KKK Error : ${state.message}")
+                binding.resultTV.text = state.message
             }
         }
     }
