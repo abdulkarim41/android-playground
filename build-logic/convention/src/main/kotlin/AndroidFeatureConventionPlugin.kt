@@ -11,11 +11,9 @@ class AndroidFeatureConventionPlugin : Plugin<Project> {
     override fun apply(target: Project) {
         with(target) {
 
-            pluginManager.apply {
-                apply("iamkarim.android.library")
-                apply("iamkarim.android.hilt")
-                apply("iamkarim.android.navigation")
-            }
+            pluginManager.apply("iamkarim.android.library")
+            pluginManager.apply("iamkarim.android.hilt")
+            pluginManager.apply("iamkarim.android.navigation")
 
             extensions.configure<LibraryExtension> {
                 defaultConfig {
@@ -29,7 +27,7 @@ class AndroidFeatureConventionPlugin : Plugin<Project> {
 
             dependencies {
 
-                add("implementation", project(":common"))
+                add("implementation", project(":core:common"))
                 add("implementation", project(":core:di"))
                 add("implementation", project(":core:domain"))
                 add("implementation", project(":core:model:entity"))
@@ -47,7 +45,7 @@ class AndroidFeatureConventionPlugin : Plugin<Project> {
                 add("testImplementation", libs.findLibrary("junit").get())
                 add("androidTestImplementation", libs.findLibrary("androidx.junit").get())
                 add("androidTestImplementation", libs.findLibrary("androidx.espresso.core").get())
-                add("androidTestImplementation", libs.findLibrary("androidx.test.ext").get())
+                //add("androidTestImplementation", libs.findLibrary("androidx.test.ext").get())
 
             }
         }

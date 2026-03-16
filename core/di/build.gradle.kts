@@ -1,5 +1,7 @@
 plugins {
     alias(libs.plugins.iamkarim.android.library)
+    alias(libs.plugins.iamkarim.android.hilt)
+    alias(libs.plugins.iamkarim.android.retrofit)
 }
 
 android {
@@ -7,5 +9,5 @@ android {
 }
 
 dependencies {
-
+    implementation(libs.log.timber)
 }
